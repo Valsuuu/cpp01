@@ -6,7 +6,7 @@
 /*   By: vmartel <vmartel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 10:55:43 by vmartel           #+#    #+#             */
-/*   Updated: 2025/10/09 12:11:37 by vmartel          ###   ########.fr       */
+/*   Updated: 2025/10/09 13:12:07 by vmartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,18 @@ class Zombie
 	public :
 	
 	Zombie();
+	Zombie(std::string name);
 	~Zombie();
 
 	void announce(void);
+	void setName(std::string name);
+	
 	private :
 	
 	std::string name;
 };
 
+Zombie* zombieHorde(int N, std::string name);
 void processing();
 
 
