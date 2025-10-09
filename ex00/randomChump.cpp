@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   randomChump.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmartel <vmartel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/08 10:33:28 by val               #+#    #+#             */
-/*   Updated: 2025/10/09 10:07:30 by vmartel          ###   ########.fr       */
+/*   Created: 2025/10/09 10:24:45 by vmartel           #+#    #+#             */
+/*   Updated: 2025/10/09 10:49:31 by vmartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie* newZombie(std::string name)
+void randomChump(std::string name)
 {
-    return new Zombie(name);   
+	Zombie z(name);
+	z.announce();
 }
