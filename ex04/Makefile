@@ -6,7 +6,7 @@
 #    By: vmartel <vmartel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/13 16:58:34 by vmartel           #+#    #+#              #
-#    Updated: 2025/10/13 17:50:09 by vmartel          ###   ########.fr        #
+#    Updated: 2025/10/14 19:27:52 by vmartel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRC =  main.cpp
 OBJ_DIR = obj
 OBJ = $(SRC:%.cpp=$(OBJ_DIR)/%.o)
 
-NAME = Weapon
+NAME = replace
 
 all: $(NAME)
 
