@@ -6,7 +6,7 @@
 /*   By: vmartel <vmartel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 10:14:26 by vmartel           #+#    #+#             */
-/*   Updated: 2025/10/15 10:50:17 by vmartel          ###   ########.fr       */
+/*   Updated: 2025/10/15 11:26:57 by vmartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,25 +57,25 @@ void Harl::displaying(void (Harl::*functions[])(void), std::string levels[], int
 
 void Harl::complain(std::string level)
 {
-	void (Harl::*functions[])(void) =
-	{
-		&Harl::debug,
-		&Harl::info,
-		&Harl::warning,
-		&Harl::error
-	};
+    int lvl = -1;
 
-	std::string levels[] = { "DEBUG", "INFO", "WARNING", "ERROR" };
+    if (level == "DEBUG") lvl = 0;
+    else if (level == "INFO") lvl = 1;
+    else if (level == "WARNING") lvl = 2;
+    else if (level == "ERROR") lvl = 3;
 
-
-	for (int i = 0; i < 4; i++)
-	{
-		if (level == levels[i])
-		{
-			displaying(functions, levels, i);
-			return ;
-		}
-	}
-	std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-
+    switch (lvl)
+    {
+        case 0:
+            debug();
+        case 1:
+            info();
+        case 2:
+            warning();
+        case 3:
+            error();
+            break;
+        default:
+            std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+    }
 }
