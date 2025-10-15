@@ -6,7 +6,7 @@
 /*   By: vmartel <vmartel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 16:58:44 by vmartel           #+#    #+#             */
-/*   Updated: 2025/10/14 19:27:36 by vmartel          ###   ########.fr       */
+/*   Updated: 2025/10/15 11:40:56 by vmartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ bool isFileReadable(const std::string& filename)
 
 std::string replaceAll(std::string content, const std::string& s1, const std::string& s2)
 {
+	if (s1.empty() || s2.empty())
+		return ("");
 	size_t pos = 0;
 
 	while((pos = content.find(s1, pos)) != std::string::npos)
@@ -64,6 +66,8 @@ int main(int ac, char **av)
 	std::string replaced;
 
 	replaced = replaceAll(content, s1, s2);
+	if (replaced.empty())
+		return (0);
 	std::ofstream output((filename + ".replace").c_str());
 	if (!output.is_open())
 		printError("Error creating output file.");
